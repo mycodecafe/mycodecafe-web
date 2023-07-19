@@ -1,0 +1,29 @@
+header{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    overflow: hidden;
+}
+
+header .header-content{
+    margin-top: 10vh;
+}
+
+
+@media (max-width: 768px) {
+    /* Media query for screens smaller than 768px */
+    header {
+      width: 100%;
+      margin-top: 10vh;
+    }
+
+    header img{
+      height: 350px;
+    }
+
+    header .header-content{
+      margin-top: 4vh;
+      padding: 5vh;
+    }
+  }
