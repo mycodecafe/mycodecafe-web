@@ -1,0 +1,13 @@
+.brand-logo {
+   height: 40px;
+}
+
+.custom-navbar-toggle {
+    /* Add your custom styles here */
+  /* For example: */
+  background-color: none;
+  color: white;
+  border: none;
+  font-size: 20px;
+  /* Add any other desired custom styles */
+}

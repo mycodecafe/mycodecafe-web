@@ -1,0 +1,41 @@
+/* AboutUs.css */
+
+.about-us-container {
+    padding: 80px 0;
+  }
+  
+  .about-us-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-us-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us-content-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-us-content {
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333; /* Choose your preferred text color */
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666; /* Choose your preferred text color */
+  }
+  

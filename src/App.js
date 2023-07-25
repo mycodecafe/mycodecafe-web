@@ -1,13 +1,16 @@
-import Navbar from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
-import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
 import StructuredData from './StructuredData';
+import Home from './pages/Home';
+import Footer from './components/Footer/Footer';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-       <Navbar/>
-       <Header/>
+       <NavBar/>
+       <Home/>
+       <Footer/>
        <StructuredData />
     </div>
   );
