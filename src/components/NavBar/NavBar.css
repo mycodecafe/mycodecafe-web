@@ -1,7 +1,16 @@
+.navbar{
+   padding: 15px;
+}
+
 .brand-logo {
    height: 40px;
 }
 
+.navbar-item{
+   font-size: 17px;
+   color: black;
+   margin-right: 25px; 
+}
 .custom-navbar-toggle {
     /* Add your custom styles here */
   /* For example: */
@@ -11,3 +20,39 @@
   font-size: 20px;
   /* Add any other desired custom styles */
 }
+.btn {
+   background-color: var(--kappel);
+   color: var(--white);
+   font-family: var(--ff-league_spartan);
+   font-size: 20px;
+   display: flex;
+   align-items: center;
+   gap: 7px;
+   max-width: max-content;
+   padding: 10px 20px;
+   border-radius: var(--radius-5);
+   overflow: hidden;
+ }
+ 
+ .has-before,
+ .has-after {
+   position: relative;
+   z-index: 1;
+ }
+ 
+ .has-before::before,
+ .has-after::after {
+   position: absolute;
+   content: "";
+ }
+ 
+ .btn::before {
+   inset: 0;
+   background-image: var(--gradient);
+   z-index: -1;
+   border-radius: inherit;
+   transform: translateX(-100%);
+   transition: var(--transition-2);
+ }
+ 
+ .btn:is(:hover, :focus)::before { transform: translateX(0); }

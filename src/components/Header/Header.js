@@ -1,24 +1,31 @@
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Header.css'; // Import your custom CSS file
 
 function Header() {
   return (
-    <Container className='header'>
-      <Row>
-        <Col className="header-content-col">
-          <div className="header-content">
-            <h1>Place where learning is easy</h1>
-            <p>
+    <section className="section hero has-bg-image" id="home" aria-label="home">
+      <Container>
+      <Row className="align-items-center justify-content-center">  
+          <Col className="hero-content-col">
+            <h1 className="h1 section-title">
+              Place where learning is easy
+            </h1>
+            <p className="hero-text">
               mycodecafe is the best platform to help you enhance your skills, expand your knowledge, and prepare for
               technical interviews. So you can make it big in the world of computers.
             </p>
-          </div>
-        </Col>
-        <Col className="header-img-col">
+            <a href="/" className="btn has-before">
+              <span className="span">Find courses</span>
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </Col>
+          <Col className="hero-banner-col">
           <img src={process.env.PUBLIC_URL + '/images/header_img.png'} alt="header-img" />
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   );
 }
 

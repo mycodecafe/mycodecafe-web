@@ -1,42 +1,25 @@
-/* Header.css */
-.header{
-  margin-top: 10vh;
-  overflow-x: hidden;
-  height: 80vh;
+.section {
+  background-color: #f5f2eb;
+  padding-block-start: calc(var(--section-padding) + 80px);
 }
 
-.header-content-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-content {
+.hero-content-col {
+  color: var(--eerie-black-1);
+  font-size: var(--fs-4);
   text-align: center;
-  padding: 40px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333; /* Choose your preferred text color */
-}
-
-p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #666; /* Choose your preferred text color */
-}
-
-.header-img-col {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.header-img-col .img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px; /* Optional: Add a border-radius to the image */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a box-shadow to the image */
+.hero .btn {
+  margin-inline: auto;
 }
+.hero-banner-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
