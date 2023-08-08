@@ -8,7 +8,7 @@ function Home() {
     <div>
         <Header/>
         <AboutUs/>
-        <Category />
+        {/* <Category /> */}
         <Bottom />
     </div>
   )
