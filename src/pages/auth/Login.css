@@ -1,0 +1,19 @@
+.login-container .login-image{
+    padding: 20vh;
+}
+
+.login-container .login-form{
+    padding: 20vh;
+}
+
+@media (max-width: 768px) {
+
+    .login-container .login-image {
+       display: none;
+    }
+  
+    .login-container .login-form{
+        padding: 5vh;
+    }
+    
+}
