@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
+import { useDispatch } from 'react-redux'; // Import useDispatch
+import { signInWithEmail } from '../../redux/actions/authActions'; // Import signInWithEmail action
 
 import './Login.css'; // Import your CSS file
 
@@ -9,14 +11,21 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false); // Track login status
+  const dispatch = useDispatch(); // Initialize useDispatch
+  const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    
-    // Perform basic login validation (for demonstration purposes)
-    if (email === 'user@example.com' && password === 'password') {
-      setLoggedIn(true);
-      console.log('Logged in successfully');
+
+    if (email && password) {
+      try {
+        await dispatch(signInWithEmail(email, password)); // Dispatch the signInWithEmail action
+        setLoggedIn(true);
+        navigate('/profile'); // Navigate to the profile page after successful login
+        console.log('Logged in successfully');
+      } catch (error) {
+        console.error('Error signing in:', error);
+      }
     } else {
       console.log('Login failed');
     }
@@ -25,17 +34,11 @@ function Login() {
   return (
     <Container fluid className='login-container'>
       <Row>
-        <Col className='login-image bg-light' md={6}>
-          <img
-            src={process.env.PUBLIC_URL + '/images/about_us.png'}
-            alt='Login-img'
-            className='img-fluid'
-          />
-        </Col>
+        <Col md={6}></Col>
         <Col md={6}>
           <div className='login-form'>
             <h2 className='text-center'>Join or log in</h2>
-            <SocialLogin/>
+            <SocialLogin />
             <Form onSubmit={handleLogin}>
               <Form.Group controlId='email'>
                 <Form.Label>Email address</Form.Label>
@@ -60,10 +63,10 @@ function Login() {
               </Button>
             </Form>
             {loggedIn && <p>Logged in successfully!</p>}
-              {/* "Don't have an account?" text with signup link */}
-              <p className="signup-link-text">
-              Don't have an account? <Link to="/signup">Sign up</Link>
-              </p>
+            {/* "Don't have an account?" text with signup link */}
+            <p className='signup-link-text'>
+              Don't have an account? <Link to='/signup'>Sign up</Link>
+            </p>
           </div>
         </Col>
       </Row>

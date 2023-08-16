@@ -2,13 +2,16 @@ import React from 'react';
 import './SocialLogin.css'; // Import your CSS file
 import { signInWithGoogle } from '../../redux/actions/authActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function SocialLogin() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = useSelector((state) => state.auth.user);
   
-    const handleGoogleSignIn = () => {
-        dispatch(signInWithGoogle());
+    const handleGoogleSignIn = async () => {
+        await dispatch(signInWithGoogle());
+        navigate('/profile'); // Navigate to the desired route after successful login
       };
       
     

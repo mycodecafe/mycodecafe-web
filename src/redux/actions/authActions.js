@@ -6,7 +6,7 @@ import {
   import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"; // Import getAuth and GoogleAuthProvider
   import { auth } from "../../firebaseConfig";
   import { USER_LOGGED_IN, USER_LOGGED_OUT, AUTH_ERROR } from './actionTypes';
-
+  
   
   
   export const userLoggedIn = (user) => ({
