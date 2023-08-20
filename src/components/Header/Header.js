@@ -21,7 +21,7 @@ function Header() {
             </a>
           </Col>
           <Col className="hero-banner-col">
-          <img src={process.env.PUBLIC_URL + '/images/header_img.png'} alt="header-img" />
+          <img src={process.env.PUBLIC_URL + '/images/image_1.png'} alt="header-img" />
           </Col>
         </Row>
       </Container>

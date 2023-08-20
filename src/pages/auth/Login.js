@@ -21,7 +21,7 @@ function Login() {
       try {
         await dispatch(signInWithEmail(email, password)); // Dispatch the signInWithEmail action
         setLoggedIn(true);
-        navigate('/profile'); // Navigate to the profile page after successful login
+        navigate('/'); // Navigate to the profile page after successful login
         console.log('Logged in successfully');
       } catch (error) {
         console.error('Error signing in:', error);
@@ -34,7 +34,9 @@ function Login() {
   return (
     <Container fluid className='login-container'>
       <Row>
-        <Col md={6}></Col>
+        <Col md={6} className="bg-light">
+         <img src={process.env.PUBLIC_URL + '/images/image_3.png'} alt="login-img" className='login-image'/>
+        </Col>
         <Col md={6}>
           <div className='login-form'>
             <h2 className='text-center'>Join or log in</h2>

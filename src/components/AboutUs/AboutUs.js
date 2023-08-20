@@ -8,7 +8,7 @@ function AboutUs() {
       <Row>
         <Col md={6} className="about-us-image-col">
           <div className="about-us-image">
-            <img src={process.env.PUBLIC_URL + '/images/about_us.png'} alt="About Us" />
+            <img src={process.env.PUBLIC_URL + '/images/image_2.png'} alt="About Us" />
           </div>
         </Col>
         <Col md={6} className="about-us-content-col">

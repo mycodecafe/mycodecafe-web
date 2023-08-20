@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom'; // Import Link
-import { Container, Navbar, Nav, Offcanvas } from 'react-bootstrap';
+// import { Container, Navbar, Nav, Offcanvas, Image } from 'react-bootstrap';
+import { Container, Navbar, Nav, Offcanvas, Image, Dropdown } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import ProfileDropdown from '../ProfileDropdown/ProfileDropdown';
 import './NavBar.css';
 
 function NavBar() {
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated); // Get the authentication status
+
+  const [showDropdown, setShowDropdown] = useState(false); // State for showing/hiding the dropdown
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <>
       <Navbar expand="lg" className="navbar bg-body-tertiary mb-3" fixed="top">
@@ -29,10 +40,24 @@ function NavBar() {
                 <Nav.Link as={Link} to="/blog" className='navbar-item'>Blog</Nav.Link>
                 <Nav.Link as={Link} to="/contact" className='navbar-item'>Contact</Nav.Link>
               </Nav>
-              {/* Wrap the button content in a Link component */}
-              <Link to="/login" className="btn has-before">
-                <span className="span">Login</span>
-              </Link>
+
+            {isAuthenticated ? (
+            <Dropdown show={showDropdown} align="end">
+              <Dropdown.Toggle
+                as={Image}
+                src="https://www.svgrepo.com/show/382101/male-avatar-boy-face-man-user.svg"
+                roundedCircle
+                onClick={toggleDropdown}
+                className="profile-picture"
+              />
+              {/* Use the ProfileDropdown component */}
+              <ProfileDropdown />
+            </Dropdown>
+          ) : (
+            <Link to="/login" className="btn has-before">
+              <span className="span">Login</span>
+            </Link>
+          )}
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import './Signup.css'; // Import your CSS file
 import { useDispatch } from 'react-redux';
 import { signUpWithEmail } from '../../redux/actions/authActions'; // Import the signUpWithEmail action
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ function Signup() {
       try {
         await dispatch(signUpWithEmail(email, password)); // Dispatch the signUpWithEmail action
         setSignupSuccess(true);
-        navigate('/profile');
+        navigate('/');
         console.log('Signup successful');
       } catch (error) {
         console.error('Error signing up:', error);
@@ -32,7 +32,9 @@ function Signup() {
   return (
     <Container fluid className='signup-container'>
       <Row>
-        <Col md={6}></Col>
+        <Col md={6}>
+          <img src={process.env.PUBLIC_URL + '/images/image_3.png'} alt="login-img" className='signup-image'/>
+        </Col>
         <Col md={6}>
           <div className='signup-form'>
             <h2 className='text-center'>Join or log in</h2>
@@ -60,6 +62,9 @@ function Signup() {
               </Button>
             </Form>
             {signupSuccess && <p>Signup successful!</p>}
+            <p className='login-link-text'>
+              Already have an account? <Link to='/login'>Login</Link>
+            </p>
           </div>
         </Col>
       </Row>
