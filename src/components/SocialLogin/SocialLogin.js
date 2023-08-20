@@ -11,7 +11,7 @@ function SocialLogin() {
   
     const handleGoogleSignIn = async () => {
         await dispatch(signInWithGoogle());
-        navigate('/profile'); // Navigate to the desired route after successful login
+        navigate('/'); // Navigate to the desired route after successful login
       };
       
     
